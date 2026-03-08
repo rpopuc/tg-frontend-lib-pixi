@@ -1,6 +1,28 @@
 import { Component } from '../core/Component.js';
 
+/**
+ * Flexbox-like layout for PixiJS containers.
+ *
+ * Positions visible children in a row or column with configurable gap,
+ * justify (start/center/end/between/around), align, and optional wrapping.
+ *
+ * @example
+ * const bar = new FlowLayout({ gap: 16, direction: 'horizontal', justify: 'center', width: 800 });
+ * bar.addChild(btnA);
+ * bar.addChild(btnB);
+ * bar.layout();
+ */
 export class FlowLayout extends Component {
+    /**
+     * @param {Object} [options]
+     * @param {number|{x: number, y: number}} [options.gap=20] - Space between items. Pass an object for separate x/y gaps.
+     * @param {'horizontal'|'vertical'} [options.direction='horizontal'] - Main axis direction.
+     * @param {'start'|'center'|'end'|'between'|'around'} [options.justify='start'] - Main axis alignment.
+     * @param {'start'|'center'|'end'} [options.align='center'] - Cross axis alignment.
+     * @param {boolean} [options.wrap=false] - Wrap to next line when exceeding container size.
+     * @param {number} [options.width=0] - Container width (required for justify/wrap in horizontal mode).
+     * @param {number} [options.height=0] - Container height (required for justify/wrap in vertical mode).
+     */
     constructor({
         gap = 20,
         direction = 'horizontal',
@@ -25,6 +47,9 @@ export class FlowLayout extends Component {
         this._gap = typeof value === 'object' ? value : { x: value, y: value };
     }
 
+    /**
+     * Recalculate positions of all visible children.
+     */
     layout() {
         const items = this.children.filter(c => c.visible);
         if (items.length === 0) return;

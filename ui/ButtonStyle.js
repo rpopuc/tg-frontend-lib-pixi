@@ -1,4 +1,26 @@
+/**
+ * Style data object for {@link Button}.
+ *
+ * @example
+ * const style = new ButtonStyle({
+ *     bgColor: 0xC8A96E,
+ *     textColor: 0x3a2415,
+ *     radius: 12,
+ * });
+ * const btn = new Button('OK', 160, 40, style);
+ */
 export class ButtonStyle {
+    /**
+     * @param {Object} [options]
+     * @param {number} [options.bgColor=0x666666]
+     * @param {number} [options.bgHoverColor=0x888888]
+     * @param {number} [options.borderColor=0x444444]
+     * @param {number} [options.borderWidth=2]
+     * @param {number} [options.radius=8]
+     * @param {number} [options.textColor=0xffffff]
+     * @param {string} [options.fontFamily='sans-serif']
+     * @param {number} [options.fontSize=16]
+     */
     constructor({
         bgColor = 0x666666,
         bgHoverColor = 0x888888,

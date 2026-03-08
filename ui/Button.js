@@ -1,9 +1,27 @@
 import { Component } from '../core/Component.js';
 import { ButtonStyle } from './ButtonStyle.js';
 
+/**
+ * Interactive button with label, hover feedback and configurable style.
+ *
+ * Emits {@link Button.EVENT_TAP} on click/tap. Visual appearance is
+ * controlled by a {@link ButtonStyle} data object.
+ *
+ * @example
+ * const btn = new Button('Confirm', 200, 48);
+ * btn.on(Button.EVENT_TAP, () => console.log('clicked'));
+ * stage.addChild(btn);
+ */
 export class Button extends Component {
+    /** Event name emitted on tap/click. */
     static EVENT_TAP = 'tap';
 
+    /**
+     * @param {string} [label=''] - Button text.
+     * @param {number} [width=160] - Button width in pixels.
+     * @param {number} [height=40] - Button height in pixels.
+     * @param {ButtonStyle} [style] - Visual style configuration.
+     */
     constructor(label = '', width = 160, height = 40, style = new ButtonStyle()) {
         super(null);
         this.interactive = true;
@@ -46,10 +64,18 @@ export class Button extends Component {
         this.bg.endFill();
     }
 
+    /**
+     * Change the button label text.
+     * @param {string} text
+     */
     setLabel(text) {
         this.label.text = text;
     }
 
+    /**
+     * Enable or disable interaction.
+     * @param {boolean} enabled
+     */
     setEnabled(enabled) {
         this.interactive = enabled;
         this.cursor = enabled ? 'pointer' : 'default';

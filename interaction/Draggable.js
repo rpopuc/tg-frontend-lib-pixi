@@ -1,4 +1,27 @@
+/**
+ * Adds drag behavior to any `PIXI.Container`.
+ *
+ * Supports a dead zone (minimum distance before drag starts),
+ * and optional callbacks for start/move/end. Pointer events are
+ * captured on `window` to handle fast mouse movements.
+ *
+ * @example
+ * const draggable = new Draggable(sprite, {
+ *     deadZone: 10,
+ *     onStart: (pos) => console.log('drag started at', pos),
+ *     onEnd: (pos) => console.log('dropped at', pos),
+ * });
+ * // later: draggable.destroy();
+ */
 export class Draggable {
+    /**
+     * @param {PIXI.Container} target - The display object to make draggable.
+     * @param {Object} [options]
+     * @param {function({x: number, y: number}): void} [options.onStart] - Called when drag starts (after deadZone).
+     * @param {function({x: number, y: number}): void} [options.onMove] - Called on each pointer move during drag.
+     * @param {function({x: number, y: number}): void} [options.onEnd] - Called when drag ends.
+     * @param {number} [options.deadZone=0] - Minimum pixel distance before drag activates.
+     */
     constructor(target, { onStart, onMove, onEnd, deadZone = 0 } = {}) {
         this.target = target;
         this.onStart = onStart || null;
@@ -63,6 +86,9 @@ export class Draggable {
         }
     }
 
+    /**
+     * Remove all event listeners. Call this before discarding the target.
+     */
     destroy() {
         this.target.off('pointerdown', this._onPointerDown);
         window.removeEventListener('pointermove', this._onPointerMove);
