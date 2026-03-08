@@ -14,3 +14,7 @@ export { BaseModal } from './ui/BaseModal.js';
 export { Button } from './ui/Button.js';
 export { ButtonStyle } from './ui/ButtonStyle.js';
 export { FlowLayout } from './ui/FlowLayout.js';
+
+// Interaction
+export { Draggable } from './interaction/Draggable.js';
+export { makeDraggable } from './interaction/makeDraggable.js';
