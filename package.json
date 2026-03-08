@@ -14,7 +14,8 @@
   "exports": {
     ".": "./index.js",
     "./core/*": "./core/*",
-    "./ui/*": "./ui/*"
+    "./ui/*": "./ui/*",
+    "./utils/*": "./utils/*"
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
@@ -29,6 +30,7 @@
   "files": [
     "core/",
     "ui/",
+    "utils/",
     "index.js"
   ],
   "keywords": [

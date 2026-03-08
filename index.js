@@ -1,3 +1,9 @@
+// Utils
+export { Color } from './utils/Color.js';
+export { Easing } from './utils/Easing.js';
+export { MathUtils } from './utils/MathUtils.js';
+export { EventEmitter } from './utils/EventEmitter.js';
+
 // Core
 export { AnimationBus } from './core/AnimationBus.js';
 export { Component } from './core/Component.js';
