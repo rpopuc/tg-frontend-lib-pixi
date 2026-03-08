@@ -1,6 +1,6 @@
 {
   "name": "@rpopuc/tg-frontend-lib-pixi",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rpopuc/tg-frontend-lib-pixi.git"
@@ -10,7 +10,10 @@
   },
   "description": "Reusable PixiJS components for Tabula Games frontends",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/tg-frontend-lib.js",
+  "module": "index.js",
+  "browser": "dist/tg-frontend-lib.min.js",
+  "unpkg": "dist/tg-frontend-lib.min.js",
   "exports": {
     ".": "./index.js",
     "./core/*": "./core/*",
@@ -20,6 +23,7 @@
     "./interaction/*": "./interaction/*"
   },
   "scripts": {
+    "build": "rollup -c",
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "peerDependencies": {
@@ -27,7 +31,9 @@
   },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
-    "jest": "^29.7.0"
+    "@rollup/plugin-terser": "^1.0.0",
+    "jest": "^29.7.0",
+    "rollup": "^4.59.0"
   },
   "files": [
     "core/",
@@ -35,6 +41,7 @@
     "utils/",
     "assets/",
     "interaction/",
+    "dist/",
     "index.js"
   ],
   "keywords": [

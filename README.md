@@ -6,11 +6,29 @@ orchestration and math/color utilities.
 
 ## Install
 
+### npm (bundler)
+
 ```bash
 npm install @rpopuc/tg-frontend-lib-pixi
 ```
 
-Requires `pixi.js >= 7.0.0` as peer dependency.
+```js
+import { Button, FlowLayout, AnimationBus } from '@rpopuc/tg-frontend-lib-pixi';
+```
+
+### CDN (script tag)
+
+```html
+<script src="https://pixijs.download/release/pixi.min.js"></script>
+<script src="dist/tg-frontend-lib.min.js"></script>
+<script>
+    const { Button, FlowLayout, AnimationBus } = TabulaGames;
+</script>
+```
+
+All classes are available under `window.TabulaGames`.
+
+Requires `pixi.js >= 7.0.0` (load it before the lib).
 
 ## Core
 
