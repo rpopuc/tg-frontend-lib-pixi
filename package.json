@@ -1,6 +1,6 @@
 {
   "name": "@rpopuc/tg-frontend-lib-pixi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rpopuc/tg-frontend-lib-pixi.git"
@@ -15,7 +15,9 @@
     ".": "./index.js",
     "./core/*": "./core/*",
     "./ui/*": "./ui/*",
-    "./utils/*": "./utils/*"
+    "./utils/*": "./utils/*",
+    "./assets/*": "./assets/*",
+    "./interaction/*": "./interaction/*"
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
@@ -31,6 +33,8 @@
     "core/",
     "ui/",
     "utils/",
+    "assets/",
+    "interaction/",
     "index.js"
   ],
   "keywords": [

@@ -29,6 +29,13 @@ class Container {
         return this;
     }
 
+    off(event, fn) {
+        if (this._listeners[event]) {
+            this._listeners[event] = this._listeners[event].filter(f => f !== fn);
+        }
+        return this;
+    }
+
     emit(event, ...args) {
         (this._listeners[event] || []).forEach(fn => fn(...args));
     }
