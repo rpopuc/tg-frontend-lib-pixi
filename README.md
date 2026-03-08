@@ -1,11 +1,11 @@
-# @tabula-games/frontend-lib
+# @rpopuc/tg-frontend-lib-pixi
 
 Reusable PixiJS components for Tabula Games frontends.
 
 ## Install
 
 ```bash
-npm install @tabula-games/frontend-lib
+npm install @rpopuc/tg-frontend-lib-pixi
 ```
 
 Requires `pixi.js >= 7.0.0` as peer dependency.
@@ -28,7 +28,7 @@ Requires `pixi.js >= 7.0.0` as peer dependency.
 ## Usage
 
 ```js
-import { AnimationBus, Component, Button, ButtonStyle, FlowLayout } from '@tabula-games/frontend-lib';
+import { AnimationBus, Component, Button, ButtonStyle, FlowLayout } from '@rpopuc/tg-frontend-lib-pixi';
 
 // Button with custom style
 const style = new ButtonStyle({ bgColor: 0xC8A96E, textColor: 0x3a2415 });

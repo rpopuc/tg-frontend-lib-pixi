@@ -1,6 +1,13 @@
 {
-  "name": "@tabula-games/frontend-lib",
-  "version": "0.1.0",
+  "name": "@rpopuc/tg-frontend-lib-pixi",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpopuc/tg-frontend-lib-pixi.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "description": "Reusable PixiJS components for Tabula Games frontends",
   "type": "module",
   "main": "index.js",
